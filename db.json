@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "body": "Make an example project",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "body": "Write the documentation",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "body": "Start the real project",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "body": "Make it rain",
+      "completed": false
+    }
+  ]
+}
