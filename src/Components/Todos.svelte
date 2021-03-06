@@ -13,6 +13,10 @@
 
   let todos: TodoObject[] = [];
 
+  // The $: label declares a value as reactive. You can think of this like a calculated field. To test how this works, try replacing '$:' with 'let'. See: https://svelte.dev/tutorial/reactive-declarations
+
+  $: totalTasks = todos.length;
+
   // onMount is a lifecycle method that is called once the component is first rendered. This is typically where you'll find initial data requests. For a more in-depth explanation, see: https://svelte.dev/tutorial/onmount
 
   // onMount is calling an ES6 arrow function. See https://javascript.info/arrow-functions-basics
@@ -77,6 +81,7 @@
 <!-- The "on" directive allows us to run a function when a given event is called. In this case, when the form is submitted, the handleSubmit() function is called -->
 
 <!-- preventDefault is set on the on:submit directive to prevent the default form action reloading the page. See https://svelte.dev/tutorial/event-modifiers -->
+<h3>Total Tasks: {totalTasks}</h3>
 
 <form on:submit|preventDefault={handleSubmit}>
   <!-- In our input, we bind the value of the input to the task variable. Whenever we make a change in the input, the task variable is updated. -->
