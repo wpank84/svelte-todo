@@ -5,6 +5,10 @@
 
   import Todo from './Todo.svelte';
 
+  //add UUIDs for the tasks
+
+  import { v4 as uuidv4 } from 'uuid';
+
   // We import the type declared by our interface in App.svelte
 
   import type { TodoObject } from '../App.svelte';
@@ -28,6 +32,7 @@
       .get('http://localhost:3000/todos')
       .then((res) => {
         todos = res.data;
+        console.log(todos);
       })
       .catch((err) => {
         console.log(err);
@@ -57,7 +62,7 @@
 
   function handleSubmit() {
     const todoObject: TodoObject = {
-      id: todos.length + 1,
+      id: uuidv4(),
       body: task,
       completed: false,
     };
